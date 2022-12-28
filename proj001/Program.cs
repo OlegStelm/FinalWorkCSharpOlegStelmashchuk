@@ -27,26 +27,33 @@ for (int i = 0; i < arrayStart.Length; i++)
     }
     else
     {
-        Console.Write($"{arrayStart[i]}*");
+        Console.Write($"{arrayStart[i]},");
     }
 }
 Console.WriteLine($"]");
-int n = new Random().Next(1,8);
-string[] arrayOut = new string[n];
-Console.Write($"[");
-for (int i = 0; i < arrayOut.Length; i++)
+int n = new Random().Next(4);
+if (n == 0)
 {
-    if (i == arrayStart.Length - 1)
-    {
-    int a = new Random().Next(arrayStart.Length);
-    arrayOut[i] = arrayStart[a];
-    Console.Write($"{arrayOut[i]}");
-    }
-    else
-    {
-    int a = new Random().Next(arrayStart.Length);
-    arrayOut[i] = arrayStart[a];
-    Console.Write($"{arrayOut[i]}*");
-    }
+    Console.WriteLine($"[]");
 }
-Console.WriteLine($"]");
+else
+{
+    string[] arrayOut = new string[n];
+    Console.Write($"[");
+    for (int i = 0; i < arrayOut.Length; i++)
+    {
+        if (i == arrayOut.Length - 1)
+        {
+            int a = new Random().Next(arrayStart.Length);
+            arrayOut[i] = arrayStart[a];
+            Console.Write($"{arrayOut[i]}");
+        }
+        else
+        {
+            int a = new Random().Next(arrayStart.Length);
+            arrayOut[i] = arrayStart[a];
+            Console.Write($"{arrayOut[i]},");
+        }
+    }
+    Console.WriteLine($"]");
+}
